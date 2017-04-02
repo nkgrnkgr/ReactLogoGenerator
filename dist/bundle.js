@@ -20595,52 +20595,6 @@ var Message = function (_Component) {
 exports.default = Message;
 
 },{"react":177}],180:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require("react");
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var TextInput = function (_Component) {
-    _inherits(TextInput, _Component);
-
-    function TextInput(props) {
-        _classCallCheck(this, TextInput);
-
-        return _possibleConstructorReturn(this, (TextInput.__proto__ || Object.getPrototypeOf(TextInput)).call(this, props));
-    }
-
-    _createClass(TextInput, [{
-        key: "render",
-        value: function render() {
-            return _react2.default.createElement(
-                "div",
-                null,
-                _react2.default.createElement("input", { type: "text", value: this.props.textValue, onChange: this.props.handleOnChange })
-            );
-        }
-    }]);
-
-    return TextInput;
-}(_react.Component);
-
-exports.default = TextInput;
-
-},{"react":177}],181:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20653,17 +20607,13 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _index = require('../../components/TextInput/index');
+var _index = require('../../components/Button/index');
 
 var _index2 = _interopRequireDefault(_index);
 
-var _index3 = require('../../components/Button/index');
+var _index3 = require('../../components/Message/index');
 
 var _index4 = _interopRequireDefault(_index3);
-
-var _index5 = require('../../components/Message/index');
-
-var _index6 = _interopRequireDefault(_index5);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -20683,15 +20633,16 @@ var Main = function (_Component) {
 
         _this.state = {
             isActive: true,
-            textValue: ''
+            textValue: 'Nokogiri'
         };
+        _this._handleOnChange = _this._handleOnChange.bind(_this);
         _this._toggleButtonStatus = _this._toggleButtonStatus.bind(_this);
         return _this;
     }
 
     _createClass(Main, [{
-        key: '_setText',
-        value: function _setText(e) {
+        key: '_handleOnChange',
+        value: function _handleOnChange(e) {
             this.setState({
                 textValue: e.target.value
             });
@@ -20707,8 +20658,6 @@ var Main = function (_Component) {
         key: 'render',
         value: function render() {
 
-            var msg = 'Nokogiri';
-
             return _react2.default.createElement(
                 'div',
                 { className: 'main' },
@@ -20718,7 +20667,7 @@ var Main = function (_Component) {
                     'React Logo Generator!'
                 ),
                 _react2.default.createElement(
-                    _index6.default,
+                    _index4.default,
                     { isActive: this.state.isActive },
                     this.state.textValue
                 ),
@@ -20727,7 +20676,7 @@ var Main = function (_Component) {
                     null,
                     'Text'
                 ),
-                _react2.default.createElement(_index2.default, { textValue: this.state.textValue, handleOnChange: this._setText }),
+                _react2.default.createElement('input', { type: 'text', value: this.state.textValue, onChange: this._handleOnChange }),
                 _react2.default.createElement(
                     'h3',
                     null,
@@ -20736,8 +20685,30 @@ var Main = function (_Component) {
                 _react2.default.createElement(
                     'div',
                     { className: 'buttonGroup' },
-                    _react2.default.createElement(_index4.default, { name: 'Light', isActive: this.state.isActive, handleClick: this._toggleButtonStatus }),
-                    _react2.default.createElement(_index4.default, { name: 'Dark', isActive: !this.state.isActive, handleClick: this._toggleButtonStatus })
+                    _react2.default.createElement(_index2.default, { name: 'Light', isActive: this.state.isActive, handleClick: this._toggleButtonStatus }),
+                    _react2.default.createElement(_index2.default, { name: 'Dark', isActive: !this.state.isActive, handleClick: this._toggleButtonStatus })
+                ),
+                _react2.default.createElement(
+                    'h3',
+                    null,
+                    'Font-Family'
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'buttonGroup' },
+                    _react2.default.createElement(_index2.default, { name: 'Light', isActive: this.state.isActive, handleClick: this._toggleButtonStatus }),
+                    _react2.default.createElement(_index2.default, { name: 'Dark', isActive: !this.state.isActive, handleClick: this._toggleButtonStatus })
+                ),
+                _react2.default.createElement(
+                    'h3',
+                    null,
+                    'BackGroundColor'
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'buttonGroup' },
+                    _react2.default.createElement(_index2.default, { name: 'Light', isActive: this.state.isActive, handleClick: this._toggleButtonStatus }),
+                    _react2.default.createElement(_index2.default, { name: 'Dark', isActive: !this.state.isActive, handleClick: this._toggleButtonStatus })
                 )
             );
         }
@@ -20748,7 +20719,7 @@ var Main = function (_Component) {
 
 exports.default = Main;
 
-},{"../../components/Button/index":178,"../../components/Message/index":179,"../../components/TextInput/index":180,"react":177}],182:[function(require,module,exports){
+},{"../../components/Button/index":178,"../../components/Message/index":179,"react":177}],181:[function(require,module,exports){
 'use strict';
 
 var _react = require('react');
@@ -20769,4 +20740,4 @@ var el = document.getElementById('root');
 
 _reactDom2.default.render(_react2.default.createElement(_index2.default, null), el);
 
-},{"./container/Main/index":181,"react":177,"react-dom":26}]},{},[182]);
+},{"./container/Main/index":180,"react":177,"react-dom":26}]},{},[181]);
