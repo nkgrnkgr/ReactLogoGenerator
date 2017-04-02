@@ -2,49 +2,23 @@
 
 ![Cap](./img/cap.png)
 
-React Logo Generator
+Reactを使ったロゴジェネレーター
 
 ## Description
 
-2017/04/19 React ハンズオンイベントのための
-
-***DEMO:***
-
-![Demo](./img/gif.png)
-
-## Features
-
-- Awesome function
-- Awesome UI
-- ...
-
-For more information, see `awesome-tool --help`.
+2017/04/19 React ハンズオンイベントのためのレポジトリ
 
 ## Requirement
 
-- Requirement
-- Requirement
-- Requirement
-
-## Usage
-
-1. Usage
-2. Usage
-3. Usage
+- Node.js
 
 ## Installation
 
-    $ git clone https://github.com/b4b4r07/awesome-tool
-
-## Anything Else
-
-AnythingAnythingAnything
-AnythingAnythingAnything
-AnythingAnythingAnything
+    $ git clone https://github.com/nokogiring/ReactLogoGenerator.git
 
 ## Author
 
-[@b4b4r07](https://twitter.com/b4b4r07)
+[@nokogiring](https://twitter.com/nokogiring)
 
 ## License
 
