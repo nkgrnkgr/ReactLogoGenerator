@@ -20578,12 +20578,15 @@ var Message = function (_Component) {
     _createClass(Message, [{
         key: 'render',
         value: function render() {
+
+            var textClass = this.props.fontfamily + ' ' + this.props.textColor + '-text';
+
             return _react2.default.createElement(
                 'div',
-                { className: 'msgfield' },
+                { className: 'msgfield ' + this.props.backgroundColor },
                 _react2.default.createElement(
                     'p',
-                    { className: this.props.isActive ? 'msg' : '' },
+                    { className: textClass, style: { fontSize: this.props.fontSize } },
                     this.props.children
                 )
             );
@@ -20633,13 +20636,17 @@ var Main = function (_Component) {
         var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
 
         _this.state = {
-            textValue: 'Nokogiri',
-            fontfamily: '',
-            textColor: 'black'
+            textValue: '@Nokogiri',
+            fontSize: 64,
+            fontfamily: 'Pacifico',
+            textColor: 'Black',
+            backgroundColor: 'tempting-azure'
         };
         _this._handleOnChange = _this._handleOnChange.bind(_this);
+        _this._handleOnChangeNumber = _this._handleOnChangeNumber.bind(_this);
         _this._selectFontFamily = _this._selectFontFamily.bind(_this);
         _this._selectTextColor = _this._selectTextColor.bind(_this);
+        _this._selectBackGroundColor = _this._selectBackGroundColor.bind(_this);
         return _this;
     }
 
@@ -20648,6 +20655,13 @@ var Main = function (_Component) {
         value: function _handleOnChange(e) {
             this.setState({
                 textValue: e.target.value
+            });
+        }
+    }, {
+        key: '_handleOnChangeNumber',
+        value: function _handleOnChangeNumber(e) {
+            this.setState({
+                fontSize: e.target.value
             });
         }
     }, {
@@ -20665,6 +20679,13 @@ var Main = function (_Component) {
             });
         }
     }, {
+        key: '_selectBackGroundColor',
+        value: function _selectBackGroundColor(name) {
+            this.setState({
+                backgroundColor: name
+            });
+        }
+    }, {
         key: 'render',
         value: function render() {
 
@@ -20678,7 +20699,12 @@ var Main = function (_Component) {
                 ),
                 _react2.default.createElement(
                     _index4.default,
-                    { isActive: this.state.isActive },
+                    {
+                        backgroundColor: this.state.backgroundColor,
+                        fontSize: this.state.fontSize,
+                        fontfamily: this.state.fontfamily,
+                        textColor: this.state.textColor
+                    },
                     this.state.textValue
                 ),
                 _react2.default.createElement(
@@ -20687,6 +20713,8 @@ var Main = function (_Component) {
                     'Text'
                 ),
                 _react2.default.createElement('input', { type: 'text', value: this.state.textValue, onChange: this._handleOnChange }),
+                _react2.default.createElement('input', { type: 'number', value: this.state.fontSize, onChange: this._handleOnChangeNumber }),
+                ' px',
                 _react2.default.createElement(
                     'h3',
                     null,
@@ -20699,7 +20727,8 @@ var Main = function (_Component) {
                     _react2.default.createElement(_index2.default, { name: 'Macondo', selectedName: this.state.fontfamily, handleClick: this._selectFontFamily }),
                     _react2.default.createElement(_index2.default, { name: 'Indie-Flower', selectedName: this.state.fontfamily, handleClick: this._selectFontFamily }),
                     _react2.default.createElement(_index2.default, { name: 'Josefin-Sans', selectedName: this.state.fontfamily, handleClick: this._selectFontFamily }),
-                    _react2.default.createElement(_index2.default, { name: 'Jim-Nightshade', selectedName: this.state.fontfamily, handleClick: this._selectFontFamily })
+                    _react2.default.createElement(_index2.default, { name: 'Jim-Nightshade', selectedName: this.state.fontfamily, handleClick: this._selectFontFamily }),
+                    _react2.default.createElement(_index2.default, { name: 'Pacifico', selectedName: this.state.fontfamily, handleClick: this._selectFontFamily })
                 ),
                 _react2.default.createElement(
                     'h3',
@@ -20709,9 +20738,9 @@ var Main = function (_Component) {
                 _react2.default.createElement(
                     'div',
                     { className: 'buttonGroup' },
+                    _react2.default.createElement(_index2.default, { name: 'Black', selectedName: this.state.textColor, handleClick: this._selectTextColor }),
                     _react2.default.createElement(_index2.default, { name: 'tomato', selectedName: this.state.textColor, handleClick: this._selectTextColor }),
                     _react2.default.createElement(_index2.default, { name: 'skyblue', selectedName: this.state.textColor, handleClick: this._selectTextColor }),
-                    _react2.default.createElement(_index2.default, { name: 'Black', selectedName: this.state.textColor, handleClick: this._selectTextColor }),
                     _react2.default.createElement(_index2.default, { name: 'SpringGreen', selectedName: this.state.textColor, handleClick: this._selectTextColor }),
                     _react2.default.createElement(_index2.default, { name: 'Yellow', selectedName: this.state.textColor, handleClick: this._selectTextColor }),
                     _react2.default.createElement(_index2.default, { name: 'white', selectedName: this.state.textColor, handleClick: this._selectTextColor })
@@ -20720,6 +20749,16 @@ var Main = function (_Component) {
                     'h3',
                     null,
                     'BackGroundColor'
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'buttonGroup' },
+                    _react2.default.createElement(_index2.default, { name: 'warm-flame', selectedName: this.state.backgroundColor, handleClick: this._selectBackGroundColor }),
+                    _react2.default.createElement(_index2.default, { name: 'night-fade', selectedName: this.state.backgroundColor, handleClick: this._selectBackGroundColor }),
+                    _react2.default.createElement(_index2.default, { name: 'tempting-azure', selectedName: this.state.backgroundColor, handleClick: this._selectBackGroundColor }),
+                    _react2.default.createElement(_index2.default, { name: 'malibu-beach', selectedName: this.state.backgroundColor, handleClick: this._selectBackGroundColor }),
+                    _react2.default.createElement(_index2.default, { name: 'star-wine', selectedName: this.state.backgroundColor, handleClick: this._selectBackGroundColor }),
+                    _react2.default.createElement(_index2.default, { name: 'mountain-rock', selectedName: this.state.backgroundColor, handleClick: this._selectBackGroundColor })
                 )
             );
         }
