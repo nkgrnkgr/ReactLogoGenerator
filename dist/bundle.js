@@ -20525,15 +20525,16 @@ var Button = function (_Component) {
     _createClass(Button, [{
         key: 'render',
         value: function render() {
+            var _this2 = this;
 
-            var isActive = this.props.isActive ? 'button button--active' : 'button';
-
+            var isActive = this.props.name === this.props.selectedName ? ' button--active' : '';
             return _react2.default.createElement(
                 'div',
                 {
-                    className: isActive,
-                    style: { color: this.props.color },
-                    onClick: this.props.handleClick },
+                    className: this.props.name + ' button ' + isActive,
+                    onClick: function onClick() {
+                        return _this2.props.handleClick(_this2.props.name);
+                    } },
                 this.props.name
             );
         }
@@ -20632,11 +20633,13 @@ var Main = function (_Component) {
         var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
 
         _this.state = {
-            isActive: true,
-            textValue: 'Nokogiri'
+            textValue: 'Nokogiri',
+            fontfamily: '',
+            textColor: 'black'
         };
         _this._handleOnChange = _this._handleOnChange.bind(_this);
-        _this._toggleButtonStatus = _this._toggleButtonStatus.bind(_this);
+        _this._selectFontFamily = _this._selectFontFamily.bind(_this);
+        _this._selectTextColor = _this._selectTextColor.bind(_this);
         return _this;
     }
 
@@ -20648,10 +20651,17 @@ var Main = function (_Component) {
             });
         }
     }, {
-        key: '_toggleButtonStatus',
-        value: function _toggleButtonStatus() {
+        key: '_selectFontFamily',
+        value: function _selectFontFamily(name) {
             this.setState({
-                isActive: !this.state.isActive
+                fontfamily: name
+            });
+        }
+    }, {
+        key: '_selectTextColor',
+        value: function _selectTextColor(name) {
+            this.setState({
+                textColor: name
             });
         }
     }, {
@@ -20680,35 +20690,36 @@ var Main = function (_Component) {
                 _react2.default.createElement(
                     'h3',
                     null,
-                    'TextColor'
-                ),
-                _react2.default.createElement(
-                    'div',
-                    { className: 'buttonGroup' },
-                    _react2.default.createElement(_index2.default, { name: 'Light', isActive: this.state.isActive, handleClick: this._toggleButtonStatus }),
-                    _react2.default.createElement(_index2.default, { name: 'Dark', isActive: !this.state.isActive, handleClick: this._toggleButtonStatus })
-                ),
-                _react2.default.createElement(
-                    'h3',
-                    null,
                     'Font-Family'
                 ),
                 _react2.default.createElement(
                     'div',
                     { className: 'buttonGroup' },
-                    _react2.default.createElement(_index2.default, { name: 'Light', isActive: this.state.isActive, handleClick: this._toggleButtonStatus }),
-                    _react2.default.createElement(_index2.default, { name: 'Dark', isActive: !this.state.isActive, handleClick: this._toggleButtonStatus })
+                    _react2.default.createElement(_index2.default, { name: 'Robot', selectedName: this.state.fontfamily, handleClick: this._selectFontFamily }),
+                    _react2.default.createElement(_index2.default, { name: 'Macondo', selectedName: this.state.fontfamily, handleClick: this._selectFontFamily }),
+                    _react2.default.createElement(_index2.default, { name: 'Indie-Flower', selectedName: this.state.fontfamily, handleClick: this._selectFontFamily }),
+                    _react2.default.createElement(_index2.default, { name: 'Josefin-Sans', selectedName: this.state.fontfamily, handleClick: this._selectFontFamily }),
+                    _react2.default.createElement(_index2.default, { name: 'Jim-Nightshade', selectedName: this.state.fontfamily, handleClick: this._selectFontFamily })
+                ),
+                _react2.default.createElement(
+                    'h3',
+                    null,
+                    'TextColor'
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'buttonGroup' },
+                    _react2.default.createElement(_index2.default, { name: 'tomato', selectedName: this.state.textColor, handleClick: this._selectTextColor }),
+                    _react2.default.createElement(_index2.default, { name: 'skyblue', selectedName: this.state.textColor, handleClick: this._selectTextColor }),
+                    _react2.default.createElement(_index2.default, { name: 'Black', selectedName: this.state.textColor, handleClick: this._selectTextColor }),
+                    _react2.default.createElement(_index2.default, { name: 'SpringGreen', selectedName: this.state.textColor, handleClick: this._selectTextColor }),
+                    _react2.default.createElement(_index2.default, { name: 'Yellow', selectedName: this.state.textColor, handleClick: this._selectTextColor }),
+                    _react2.default.createElement(_index2.default, { name: 'white', selectedName: this.state.textColor, handleClick: this._selectTextColor })
                 ),
                 _react2.default.createElement(
                     'h3',
                     null,
                     'BackGroundColor'
-                ),
-                _react2.default.createElement(
-                    'div',
-                    { className: 'buttonGroup' },
-                    _react2.default.createElement(_index2.default, { name: 'Light', isActive: this.state.isActive, handleClick: this._toggleButtonStatus }),
-                    _react2.default.createElement(_index2.default, { name: 'Dark', isActive: !this.state.isActive, handleClick: this._toggleButtonStatus })
                 )
             );
         }

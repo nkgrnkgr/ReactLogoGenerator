@@ -1,29 +1,92 @@
 body {
-    font: 16px/1.5 "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,helvetica,sans-serif;
+    font: 16px/2 "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,helvetica,sans-serif;
 }
 .main {
     width: 90%;
     margin: 0 auto;
 }
+
+input[type='text'] {
+    font-size: 26px;
+    height: 30;
+}
+
+/* font-family */
+
+.Roboto{
+    font-family: 'Roboto', sans-serif;
+}
+.Macondo {
+    font-family: 'Macondo', cursive;
+}
+.Indie-Flower {
+    font-family: 'Indie Flower', cursive;
+}
+.Josefin-Sans {
+    font-family: 'Josefin Sans', sans-serif;
+}
+.Jim-Nightshade {
+    font-family: 'Jim Nightshade', cursive;
+}
+
+/* text-color */
+/*.tomato {
+    color: tomato;
+}
+.skyblue {
+    color: skyblue;
+}
+.Black {
+    color: Black;
+}
+.SpringGreen {
+    color: SpringGreen;
+}
+.Yellow {
+    color: Yellow;
+}
+.white {
+    color: white;
+}*/
+
+/* bg-color */
+.tomato {
+    background: tomato;
+}
+.skyblue {
+    background: skyblue;
+}
+.Black {
+    background: Black;
+    color: white;
+}
+.SpringGreen {
+    background: SpringGreen;
+}
+.Yellow {
+    background: Yellow;
+}
+.white {
+    background: white;
+}
+
+
 .buttonGroup {
     display: flex;
 }
 
 .button {
     padding: 5px;
-    border: 1px solid #000;
+    border: 3px solid #000;
     border-radius: 5px;
     cursor: pointer;
-    width: 100px;
+    width: 150px;
     margin: 5px;
     text-align: center;
-    color: #000;
 }
 
 .button--active {
-    border: 1px solid tomato;
-    background-color: tomato;
-    color: #fff;    
+    border: 3px solid red;
 }
 
 .msgfield {

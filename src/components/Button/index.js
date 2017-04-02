@@ -8,13 +8,11 @@ class Button extends Component {
 
     render() {
 
-        let isActive = this.props.isActive ? 'button button--active' : 'button'
-
+        let isActive = this.props.name === this.props.selectedName ? ` button--active` : '';
         return (
             <div
-            className={isActive}
-            style={{color: this.props.color}}
-            onClick={this.props.handleClick}>
+            className={this.props.name + ' button ' + isActive}
+            onClick={()=> this.props.handleClick(this.props.name)}>
                 {this.props.name}
             </div>
         );
