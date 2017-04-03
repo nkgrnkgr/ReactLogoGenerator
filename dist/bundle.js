@@ -20538,8 +20538,9 @@ var HelloWorld = function (_Component) {
             // return() の中に1つだけDOMオブジェクトを記載できる（子どもはいくらでも書ける）
             // ２つ書くとエラー
             return (
-
-                // htmlと違うのは class => className
+                // htmlと違うのは 以下２つ
+                // class => className
+                // for => htmlFor
                 _react2.default.createElement(
                     'div',
                     { className: 'main' },
@@ -21303,20 +21304,21 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // HTMLのdomに唯一アクセスする箇所
 
 
-// Pageのモジュールをインポート
-
-
-// Hello worldのモジュールをインポート
+// 各種モジュールのimport
 // エントリーポイントになるjs
+// React + ReactDomを利用する
 var el = document.getElementById('root');
 
-// htmlの#rootにMainクラスで作成されたDomを描画している
+// htmlの#rootに作成されたDomを描画している
+_reactDom2.default.render(
+// <PropsState defaultValue="twitter" />,
+// <HelloWorld />,
 
-
-// Mainクラスのファイルをインポート
-
-
-// PropsStateのモジュールをインポート
-_reactDom2.default.render(_react2.default.createElement(_index4.default, { defaultValue: 'twitter' }), el);
+// ミニマムHello HelloWorld
+_react2.default.createElement(
+    'h1',
+    null,
+    'Hello World'
+), el);
 
 },{"./HelloWorld/index":178,"./LogoGenerator/container/Main/index":181,"./Page/index":187,"./PropsState/index":188,"react":177,"react-dom":26}]},{},[189]);
