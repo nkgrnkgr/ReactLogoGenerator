@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
 
-/**
- * 安定のHello World
- * 
- * @class HelloWorld
- * @extends {Component}
- */
 class HelloWorld extends Component {
 
     // 描画処理
