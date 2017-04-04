@@ -21310,15 +21310,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var el = document.getElementById('root');
 
 // htmlの#rootに作成されたDomを描画している
-_reactDom2.default.render(
+_reactDom2.default.render(_react2.default.createElement(_index6.default, null),
 // <PropsState defaultValue="twitter" />,
-// <HelloWorld />,
-
-// ミニマムHello HelloWorld
-_react2.default.createElement(
-    'h1',
-    null,
-    'Hello World'
-), el);
+el);
 
 },{"./HelloWorld/index":178,"./LogoGenerator/container/Main/index":181,"./Page/index":187,"./PropsState/index":188,"react":177,"react-dom":26}]},{},[189]);

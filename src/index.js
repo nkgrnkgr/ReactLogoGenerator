@@ -14,10 +14,7 @@ const el = document.getElementById('root')
 
 // htmlの#rootに作成されたDomを描画している
 ReactDom.render(
+    <Page />,
     // <PropsState defaultValue="twitter" />,
-    // <HelloWorld />,
-
-    // ミニマムHello HelloWorld
-    <h1>Hello World</h1>,
     el
 )
