@@ -26,3 +26,4 @@ Reactを使ったロゴジェネレーター
 
 ## Slide
 
+https://speakerdeck.com/undefined_name/bu-kunaireact
