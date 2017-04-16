@@ -20505,13 +20505,19 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// HTMLのdomに唯一アクセスする箇所
-// エントリーポイントになるjs
-// React + ReactDomを利用する
+// import PropesState from './_Completed/PropsState/index';
+// import LogoGenerator from './_Completed/LogoGenerator/index';
+
+// HTMLのdomに唯一アクセスする箇所
+// エントリーポイントになるjs
+// React + ReactDomを利用する
 var el = document.getElementById('root');
 
-// htmlの#rootに作成されたDomを描画している
-_reactDom2.default.render(_react2.default.createElement(
+// htmlの#rootに作成されたDomを描画している
+_reactDom2.default.render(
+// <LogoGenerator />,
+// <PropesState defaultValue="Mastodon" />,
+_react2.default.createElement(
     'div',
     null,
     'Hello React World'

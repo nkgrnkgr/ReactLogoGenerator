@@ -51,6 +51,7 @@ main {
 }
 .card:hover {
     background-color: tomato;
+    color: white;
 }
 
 

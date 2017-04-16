@@ -23,3 +23,6 @@ Reactを使ったロゴジェネレーター
 ## License
 
 [MIT](http://b4b4r07.mit-license.org)
+
+## Slide
+
