@@ -4,6 +4,9 @@
 
 Reactを使ったロゴジェネレーター
 
+## Page
+[Logo Generator](https://nokogiring.github.io/ReactLogoGenerator/)
+
 ## Description
 
 2017/04/19 React ハンズオンイベントのためのレポジトリ
